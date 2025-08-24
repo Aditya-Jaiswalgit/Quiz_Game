@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="peach">#FED6B2</color>
+    <color name="brown">#341210</color>
+    <color name="primary_color">#667eea</color>
+    <color name="primary_dark">#764ba2</color>
+    <color name="primary_light">#e8ebff</color>
+    <color name="accent_color">#ff6b6b</color>
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#666666</color>
+    <color name="option_border">#e0e6ef</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#f44336</color>
+    <color name="blue">#2196F3</color>
+</resources>

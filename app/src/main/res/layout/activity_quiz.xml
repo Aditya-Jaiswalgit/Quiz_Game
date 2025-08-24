@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="35dp"
+    android:background="@drawable/gradient_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:text="इनमें से कोई एक सही विकल्प चुनें"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/scoreCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+               android:paddingBottom="20dp"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/primary_color" />
+
+                <TextView
+                    android:id="@+id/scoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score: 0"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed-light" />
+
+                <TextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Fruits"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-condensed-light" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Question Image Container -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCard"
+            android:layout_width="0dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scoreCard">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/questionImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/image_placeholder_background"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="8dp" />
+
+                <!-- Shimmer overlay for loading effect -->
+                <View
+                    android:id="@+id/shimmerOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shimmer_gradient"
+                    android:visibility="gone"
+                    android:layout_margin="8dp" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Options Container -->
+        <LinearLayout
+            android:id="@+id/optionsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageCard">
+
+            <!-- Option 1 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option1"
+                style="@style/QuizOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Option 1"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                android:fontFamily="@font/nav"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_radio_unchecked"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:iconTint="@color/primary_color"
+                app:rippleColor="@color/primary_light"
+                app:strokeColor="@color/option_border"
+                app:strokeWidth="2dp" />
+
+            <!-- Option 2 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option2"
+                style="@style/QuizOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Option 2"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_radio_unchecked"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                android:fontFamily="@font/nav"
+                app:iconTint="@color/primary_color"
+                app:rippleColor="@color/primary_light"
+                app:strokeColor="@color/option_border"
+                app:strokeWidth="2dp" />
+
+            <!-- Option 3 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option3"
+                style="@style/QuizOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Option 3"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_radio_unchecked"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:iconTint="@color/primary_color"
+                app:rippleColor="@color/primary_light"
+                app:strokeColor="@color/option_border"
+                android:fontFamily="@font/nav"
+                app:strokeWidth="2dp" />
+
+            <!-- Option 4 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/option4"
+                style="@style/QuizOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="Option 4"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="20dp"
+                app:elevation="8dp"
+                app:icon="@drawable/ic_radio_unchecked"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:iconTint="@color/primary_color"
+                app:rippleColor="@color/primary_light"
+                app:strokeColor="@color/option_border"
+                android:fontFamily="@font/nav"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
