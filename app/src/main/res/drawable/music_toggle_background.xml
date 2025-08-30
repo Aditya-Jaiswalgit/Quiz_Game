@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed State -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#8B5CF6"
+                android:endColor="#A78BFA"
+                android:angle="45" />
+            <stroke
+                android:width="2dp"
+                android:color="#FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Normal State -->
+    <item>
+        <layer-list>
+            <!-- Shadow -->
+            <item android:top="2dp" android:left="1dp" android:right="1dp" android:bottom="0dp">
+                <shape android:shape="oval">
+                    <solid android:color="#40000000" />
+                </shape>
+            </item>
+            <!-- Main Circle -->
+            <item android:top="0dp" android:left="0dp" android:right="2dp" android:bottom="2dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:startColor="#A855F7"
+                        android:endColor="#C084FC"
+                        android:angle="45" />
+                    <stroke
+                        android:width="2dp"
+                        android:color="#E879F9" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

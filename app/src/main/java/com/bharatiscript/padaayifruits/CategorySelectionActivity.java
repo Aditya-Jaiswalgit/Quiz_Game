@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CategorySelectionActivity extends AppCompatActivity {
 
-    private Button btnFruits, btnAnimals, btnVegetables, btnMonuments;
+    private Button btnFruits, btnAnimals, btnVegetables, btnMonuments, btnPatriots, btnBirds;
     private TextView titleText;
 
     @Override
@@ -49,6 +49,8 @@ public class CategorySelectionActivity extends AppCompatActivity {
         btnAnimals = findViewById(R.id.btnAnimals);
         btnVegetables = findViewById(R.id.btnVegetables);
         btnMonuments = findViewById(R.id.btnMonuments);
+        btnPatriots = findViewById(R.id.btnPatriots);
+        btnBirds = findViewById(R.id.btnBirds);
     }
 
     private void setupClickListeners() {
@@ -56,6 +58,8 @@ public class CategorySelectionActivity extends AppCompatActivity {
         btnAnimals.setOnClickListener(v -> startQuiz("animals"));
         btnVegetables.setOnClickListener(v -> startQuiz("vegetables"));
         btnMonuments.setOnClickListener(v -> startQuiz("monuments"));
+        btnPatriots.setOnClickListener(v -> startQuiz("patriots"));
+        btnBirds.setOnClickListener(v -> startQuiz("birds"));
     }
 
     private void startQuiz(String category) {

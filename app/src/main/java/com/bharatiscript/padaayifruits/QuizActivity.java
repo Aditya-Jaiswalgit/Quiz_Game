@@ -84,6 +84,12 @@ public class QuizActivity extends AppCompatActivity {
             case "vegetables":
                 title = "सब्जियां (Vegetables)";
                 break;
+            case "patriots":
+                title = "पतनी (Patriots)";
+                break;
+            case "birds":
+                title = "पेंगुइन (Birds)";
+                break;
             case "monuments":
                 title = "स्मारक (Monuments)";
                 break;
@@ -123,15 +129,15 @@ public class QuizActivity extends AppCompatActivity {
         builder.setMessage(message);
         builder.setCancelable(false);
 
-        builder.setPositiveButton("🔁 Retry", (dialog, which) -> {
+        builder.setPositiveButton("Retry", (dialog, which) -> {
             restartQuiz();
         });
 
-        builder.setNeutralButton("📋 Categories", (dialog, which) -> {
+        builder.setNeutralButton("Categories", (dialog, which) -> {
             goToCategories();
         });
 
-        builder.setNegativeButton("🏠 Home", (dialog, which) -> {
+        builder.setNegativeButton("Home", (dialog, which) -> {
             goToHome();
         });
 
@@ -184,6 +190,12 @@ public class QuizActivity extends AppCompatActivity {
             case "monuments":
                 loadMonumentQuestions();
                 break;
+            case "birds":
+                loadBirdsQuestions();
+                break;
+            case "patriots":
+                loadPatriotsQuestions();
+                break;
             default:
                 loadFruitQuestions();
                 break;
@@ -203,6 +215,34 @@ public class QuizActivity extends AppCompatActivity {
         allQuestions.add(new Question(R.drawable.lemon, new String[]{"अनानास", "नींबू", "केला", "तरबूज"}, 1));
         allQuestions.add(new Question(R.drawable.pear, new String[]{"नाशपाती", "नींबू", "केला", "आम"}, 0));
         allQuestions.add(new Question(R.drawable.jackfruit, new String[]{"कटहल", "आम", "लीची", "नींबू"}, 0));
+    }
+
+    private void loadBirdsQuestions(){
+        allQuestions.add(new Question(R.drawable.penguin, new String[]{"कबूतर", "पेंगुइन", "कौवा", "तोता"}, 1));
+        allQuestions.add(new Question(R.drawable.pigeon, new String[]{"कबूतर", "मोर", "गौरैया", "चील"}, 0));
+        allQuestions.add(new Question(R.drawable.sparrow, new String[]{"गौरैया", "उल्लू", "स्वान", "कौवा"}, 0));
+        allQuestions.add(new Question(R.drawable.eagle, new String[]{"मोर", "चील", "तोता", "कबूतर"}, 1));
+        allQuestions.add(new Question(R.drawable.crow, new String[]{"कौवा", "स्वान", "तोता", "गौरैया"}, 0));
+        allQuestions.add(new Question(R.drawable.peacock, new String[]{"तोता", "पेंगुइन", "मोर", "उल्लू"}, 2));
+        allQuestions.add(new Question(R.drawable.woodpecker, new String[]{"स्वान", "गौरैया", "कठफोड़वा", "तोता"}, 2));
+        allQuestions.add(new Question(R.drawable.owl, new String[]{"कबूतर", "उल्लू", "मोर", "कौवा"}, 1));
+        allQuestions.add(new Question(R.drawable.swan, new String[]{"तोता", "पेंगुइन", "स्वान", "चील"}, 2));
+        allQuestions.add(new Question(R.drawable.parrot, new String[]{"कौवा", "मोर", "तोता", "उल्लू"}, 2));
+    }
+
+    private void loadPatriotsQuestions(){
+        allQuestions.add(new Question(R.drawable.bhagatsingh, new String[]{"भगत सिंह", "चंद्रशेखर आज़ाद", "सुखदेव", "मंगल पांडे"}, 0));
+        allQuestions.add(new Question(R.drawable.chandrashekharazad, new String[]{"महात्मा गांधी", "चंद्रशेखर आज़ाद", "लाल बहादुर शास्त्री", "तांत्या टोपे"}, 1));
+        allQuestions.add(new Question(R.drawable.khudirambose, new String[]{"सुभाष चंद्र बोस", "खुदीराम बोस", "राम प्रसाद बिस्मिल", "सुखदेव"}, 1));
+        allQuestions.add(new Question(R.drawable.lalbahadurshastri, new String[]{"लाल बहादुर शास्त्री", "भगत सिंह", "महात्मा गांधी", "रानी लक्ष्मीबाई"}, 0));
+        allQuestions.add(new Question(R.drawable.mahatmagandhi, new String[]{"सुभाष चंद्र बोस", "लाल बहादुर शास्त्री", "महात्मा गांधी", "सरदार वल्लभभाई पटेल"}, 2));
+        allQuestions.add(new Question(R.drawable.mangalpandey, new String[]{"तांत्या टोपे", "मंगल पांडे", "राम प्रसाद बिस्मिल", "भगत सिंह"}, 1));
+        allQuestions.add(new Question(R.drawable.ramprasadbismil, new String[]{"राम प्रसाद बिस्मिल", "सुखदेव", "महात्मा गांधी", "खुदीराम बोस"}, 0));
+        allQuestions.add(new Question(R.drawable.ranilaxmibai, new String[]{"रानी लक्ष्मीबाई", "सुभाष चंद्र बोस", "भगत सिंह", "लाल बहादुर शास्त्री"}, 0));
+        allQuestions.add(new Question(R.drawable.sardarvallabhbhaipatel, new String[]{"चंद्रशेखर आज़ाद", "सुभाष चंद्र बोस", "सरदार वल्लभभाई पटेल", "महात्मा गांधी"}, 2));
+        allQuestions.add(new Question(R.drawable.subhashchandrabose, new String[]{"सुभाष चंद्र बोस", "राम प्रसाद बिस्मिल", "भगत सिंह", "लाल बहादुर शास्त्री"}, 0));
+        allQuestions.add(new Question(R.drawable.sukhdev, new String[]{"सुखदेव", "मंगल पांडे", "चंद्रशेखर आज़ाद", "खुदीराम बोस"}, 0));
+        allQuestions.add(new Question(R.drawable.tatyatope, new String[]{"राम प्रसाद बिस्मिल", "तांत्या टोपे", "सुभाष चंद्र बोस", "लाल बहादुर शास्त्री"}, 1));
     }
 
 

@@ -12,7 +12,7 @@ public class MusicService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (mediaPlayer == null) {
+        if (mediaPlayer == null) {  // ✅ Create only once
             mediaPlayer = MediaPlayer.create(this, R.raw.bg_music);
             mediaPlayer.setLooping(true);
         }
